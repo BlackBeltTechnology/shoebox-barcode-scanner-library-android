@@ -28,7 +28,6 @@ internal class HoneywellNewBarcodeScanner(
         AidcManager.create(activity) { manager ->
             try {
                 barcodeReader = manager.createBarcodeReader()
-                registerBarcodeScanner()
             } catch (e: InvalidScannerNameException) {
                 onBarcodeScannerError(BarcodeScannerException("Invalid scanner name: $e"))
             } catch (e: Exception) {
