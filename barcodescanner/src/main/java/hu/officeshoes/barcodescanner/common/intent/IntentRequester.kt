@@ -5,8 +5,8 @@ import android.content.Intent
 import androidx.fragment.app.FragmentActivity
 import hu.officeshoes.barcodescanner.common.fragment.FragmentManagerUtil
 import hu.officeshoes.barcodescanner.common.fragment.IntentRequesterFragment
-import io.reactivex.rxjava3.core.Single
-import io.reactivex.rxjava3.functions.BiConsumer
+import io.reactivex.Single
+import io.reactivex.functions.BiConsumer
 
 internal class IntentRequester(private val context: Context) {
 
