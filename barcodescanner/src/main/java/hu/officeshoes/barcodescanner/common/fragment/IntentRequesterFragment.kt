@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import io.reactivex.rxjava3.functions.BiConsumer
+import io.reactivex.functions.BiConsumer
 
 internal class IntentRequesterFragment : Fragment() {
 

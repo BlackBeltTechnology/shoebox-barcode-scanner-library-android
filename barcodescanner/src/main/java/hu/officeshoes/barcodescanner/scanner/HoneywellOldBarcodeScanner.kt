@@ -4,8 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import autodispose2.androidx.lifecycle.AndroidLifecycleScopeProvider
-import autodispose2.autoDispose
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider
+import com.uber.autodispose.autoDisposable
 import hu.officeshoes.barcodescanner.common.intent.IntentRequester
 import hu.officeshoes.barcodescanner.common.threading.Schedulers
 import hu.officeshoes.barcodescanner.exception.BarcodeScannerException
@@ -49,7 +49,7 @@ internal class HoneywellOldBarcodeScanner(
             .observeOn(Schedulers.backgroundScheduler)
             .filter { result -> result.resultCode == SCAN_RESULT_SUCCEEDED }
             .observeOn(Schedulers.mainScheduler)
-            .autoDispose(scopeProvider)
+            .autoDisposable(scopeProvider)
             .subscribe({
                 val scannedBarcode =
                     it.data?.getStringExtra(EXTRA_RESULT_BARCODE_DATA)
