@@ -23,7 +23,8 @@ object BarcodeScanner {
     fun init(
         activity: Activity,
         zebraDataWedgeIntentAction: String,
-        onBarcodeScannerError: (BarcodeScannerException) -> Unit
+        onBarcodeScannerSuccess: () -> Unit,
+        onBarcodeScannerError: (BarcodeScannerException) -> Unit,
     ) {
         barcodeScannerListenerHandler = when (Build.BRAND) {
             DeviceBrand.HONEYWELL.brand ->
@@ -32,6 +33,7 @@ object BarcodeScanner {
                         HoneywellNewBarcodeScanner(
                             activity = activity,
                             onBarcodeScanned = ::onBarcodeScanned,
+                            onBarcodeScannerSuccess = onBarcodeScannerSuccess,
                             onBarcodeScannerError = onBarcodeScannerError
                         )
                     )
@@ -40,6 +42,7 @@ object BarcodeScanner {
                         HoneywellOldBarcodeScanner(
                             activity = activity,
                             onBarcodeScanned = ::onBarcodeScanned,
+                            onBarcodeScannerSuccess = onBarcodeScannerSuccess,
                             onBarcodeScannerError = onBarcodeScannerError
                         )
                     )
@@ -48,6 +51,7 @@ object BarcodeScanner {
                     ZebraBarcodeScanner(
                         activity = activity,
                         onBarcodeScanned = ::onBarcodeScanned,
+                        onBarcodeScannerSuccess = onBarcodeScannerSuccess,
                         onBarcodeScannerError = onBarcodeScannerError,
                         zebraDataWedgeIntentAction = zebraDataWedgeIntentAction
                     )

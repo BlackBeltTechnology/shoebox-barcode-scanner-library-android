@@ -14,7 +14,8 @@ import hu.officeshoes.barcodescanner.exception.BarcodeScannerException
 internal class HoneywellNewBarcodeScanner(
     override val activity: Activity,
     override val onBarcodeScanned: (String) -> Unit,
-    override val onBarcodeScannerError: (BarcodeScannerException) -> Unit
+    override val onBarcodeScannerSuccess: () -> Unit,
+    override val onBarcodeScannerError: (BarcodeScannerException) -> Unit,
 ) : BarcodeReader.BarcodeListener,
     BaseBarcodeScanner {
 
@@ -28,6 +29,7 @@ internal class HoneywellNewBarcodeScanner(
         AidcManager.create(activity) { manager ->
             try {
                 barcodeReader = manager.createBarcodeReader()
+                onBarcodeScannerSuccess.invoke()
             } catch (e: InvalidScannerNameException) {
                 onBarcodeScannerError(BarcodeScannerException("Invalid scanner name: $e"))
             } catch (e: Exception) {
