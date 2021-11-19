@@ -14,7 +14,7 @@ internal class HoneywellOldBarcodeScanner(
     override val activity: Activity,
     override val onBarcodeScanned: (String) -> Unit,
     override val onBarcodeScannerSuccess: () -> Unit,
-    override val onBarcodeScannerError: (BarcodeScannerException) -> Unit,
+    override val onBarcodeScannerError: (BarcodeScannerException) -> Unit
 ) : BaseBarcodeScanner {
 
     companion object {

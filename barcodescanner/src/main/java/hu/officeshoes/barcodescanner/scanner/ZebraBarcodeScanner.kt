@@ -13,7 +13,7 @@ internal class ZebraBarcodeScanner(
     override val onBarcodeScanned: (String) -> Unit,
     override val onBarcodeScannerSuccess: () -> Unit,
     override val onBarcodeScannerError: (BarcodeScannerException) -> Unit,
-    private val zebraDataWedgeIntentAction: String,
+    private val zebraDataWedgeIntentAction: String
 ) : BaseBarcodeScanner {
 
     companion object {

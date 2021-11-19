@@ -24,7 +24,7 @@ object BarcodeScanner {
         activity: Activity,
         zebraDataWedgeIntentAction: String,
         onBarcodeScannerSuccess: () -> Unit,
-        onBarcodeScannerError: (BarcodeScannerException) -> Unit,
+        onBarcodeScannerError: (BarcodeScannerException) -> Unit
     ) {
         barcodeScannerListenerHandler = when (Build.BRAND) {
             DeviceBrand.HONEYWELL.brand ->

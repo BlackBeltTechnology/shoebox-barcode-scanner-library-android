@@ -15,7 +15,7 @@ internal class HoneywellNewBarcodeScanner(
     override val activity: Activity,
     override val onBarcodeScanned: (String) -> Unit,
     override val onBarcodeScannerSuccess: () -> Unit,
-    override val onBarcodeScannerError: (BarcodeScannerException) -> Unit,
+    override val onBarcodeScannerError: (BarcodeScannerException) -> Unit
 ) : BarcodeReader.BarcodeListener,
     BaseBarcodeScanner {
 
