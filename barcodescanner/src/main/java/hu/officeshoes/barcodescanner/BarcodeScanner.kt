@@ -15,8 +15,8 @@ import hu.officeshoes.barcodescanner.scanner.handler.SingleBarcodeScannerListene
 
 object BarcodeScanner {
 
-    const val VERSION_CODE = 2
-    const val VERSION_NAME = "1.0.1"
+    const val VERSION_CODE = 3
+    const val VERSION_NAME = "1.0.2"
 
     private var barcodeScannerListenerHandler: BaseBarcodeScannerListenerHandler? = null
 
