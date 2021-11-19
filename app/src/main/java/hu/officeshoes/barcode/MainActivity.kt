@@ -14,12 +14,17 @@ class MainActivity : AppCompatActivity() {
 
         BarcodeScanner.init(
             activity = this,
-            zebraDataWedgeIntentAction = "hu.officeshoes.barcode.RECVR"
+            zebraDataWedgeIntentAction = "hu.officeshoes.barcode.RECVR",
+            onBarcodeScannerSuccess = ::barcodeScannerInitialized,
         ) {
             Log.e("MA", "Barcode scanner error: " + it.message)
 
             showErrorDialog(it.message)
         }
+    }
+
+    private fun barcodeScannerInitialized() {
+        Log.d("MA", "Barcode scanner has been initialized successfully")
     }
 
     private fun showErrorDialog(message: String) {

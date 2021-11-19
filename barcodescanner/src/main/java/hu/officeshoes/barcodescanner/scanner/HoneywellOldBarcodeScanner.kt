@@ -13,7 +13,8 @@ import hu.officeshoes.barcodescanner.exception.BarcodeScannerException
 internal class HoneywellOldBarcodeScanner(
     override val activity: Activity,
     override val onBarcodeScanned: (String) -> Unit,
-    override val onBarcodeScannerError: (BarcodeScannerException) -> Unit
+    override val onBarcodeScannerSuccess: () -> Unit,
+    override val onBarcodeScannerError: (BarcodeScannerException) -> Unit,
 ) : BaseBarcodeScanner {
 
     companion object {
@@ -32,6 +33,10 @@ internal class HoneywellOldBarcodeScanner(
         private const val SCAN_RESULT_SUCCEEDED = -9999
 
         private const val REQUEST_CODE_SCAN = 44
+    }
+
+    init {
+        onBarcodeScannerSuccess.invoke()
     }
 
     override fun startScanning(fragment: Fragment) {

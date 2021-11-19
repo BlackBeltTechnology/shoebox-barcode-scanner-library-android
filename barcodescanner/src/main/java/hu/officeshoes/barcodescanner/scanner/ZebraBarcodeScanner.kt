@@ -11,8 +11,9 @@ import hu.officeshoes.barcodescanner.exception.BarcodeScannerException
 internal class ZebraBarcodeScanner(
     override val activity: Activity,
     override val onBarcodeScanned: (String) -> Unit,
+    override val onBarcodeScannerSuccess: () -> Unit,
     override val onBarcodeScannerError: (BarcodeScannerException) -> Unit,
-    private val zebraDataWedgeIntentAction: String
+    private val zebraDataWedgeIntentAction: String,
 ) : BaseBarcodeScanner {
 
     companion object {
@@ -23,6 +24,10 @@ internal class ZebraBarcodeScanner(
         private const val EXTRA_PARAM = "com.motorolasolutions.emdk.datawedge.api.EXTRA_PARAMETER"
         private const val EXTRA_VALUE_START_SCANNING = "START_SCANNING"
         // @formatter:on
+    }
+
+    init {
+        onBarcodeScannerSuccess.invoke()
     }
 
     private val receiver: BroadcastReceiver = object : BroadcastReceiver() {

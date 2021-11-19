@@ -8,6 +8,7 @@ internal interface BaseBarcodeScanner {
 
     val activity: Activity
     val onBarcodeScanned: (String) -> Unit
+    val onBarcodeScannerSuccess: () -> Unit
     val onBarcodeScannerError: (BarcodeScannerException) -> Unit
 
     fun startScanning(fragment: Fragment)
