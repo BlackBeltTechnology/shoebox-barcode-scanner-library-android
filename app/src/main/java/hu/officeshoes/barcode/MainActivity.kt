@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         BarcodeScanner.init(
             activity = this,
             zebraDataWedgeIntentAction = "hu.officeshoes.barcode.RECVR",
-            onBarcodeScannerSuccess = ::barcodeScannerInitialized,
+            onBarcodeScannerSuccess = ::barcodeScannerInitialized
         ) {
             Log.e("MA", "Barcode scanner error: " + it.message)
 

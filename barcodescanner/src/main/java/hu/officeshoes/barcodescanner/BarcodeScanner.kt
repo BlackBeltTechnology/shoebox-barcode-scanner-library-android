@@ -15,8 +15,8 @@ import hu.officeshoes.barcodescanner.scanner.handler.SingleBarcodeScannerListene
 
 object BarcodeScanner {
 
-    const val VERSION_CODE = 3
-    const val VERSION_NAME = "1.0.2"
+    const val VERSION_CODE = 4
+    const val VERSION_NAME = "1.1.0"
 
     private var barcodeScannerListenerHandler: BaseBarcodeScannerListenerHandler? = null
 
@@ -24,7 +24,7 @@ object BarcodeScanner {
         activity: Activity,
         zebraDataWedgeIntentAction: String,
         onBarcodeScannerSuccess: () -> Unit,
-        onBarcodeScannerError: (BarcodeScannerException) -> Unit,
+        onBarcodeScannerError: (BarcodeScannerException) -> Unit
     ) {
         barcodeScannerListenerHandler = when (Build.BRAND) {
             DeviceBrand.HONEYWELL.brand ->
