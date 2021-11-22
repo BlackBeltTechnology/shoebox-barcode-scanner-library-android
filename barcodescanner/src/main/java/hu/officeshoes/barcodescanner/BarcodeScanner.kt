@@ -30,7 +30,7 @@ object BarcodeScanner {
             DeviceBrand.HONEYWELL.brand ->
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
                     MultiBarcodeScannerListenerHandler(
-                        HoneywellNewBarcodeScanner(
+                            HoneywellNewBarcodeScanner(
                             activity = activity,
                             onBarcodeScanned = ::onBarcodeScanned,
                             onBarcodeScannerSuccess = onBarcodeScannerSuccess,

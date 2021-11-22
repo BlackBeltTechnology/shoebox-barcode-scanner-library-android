@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun barcodeScannerInitialized() {
-        Log.d("MA", "Barcode scanner has been initialized successfully")
+            Log.d("MA", "Barcode scanner has been initialized successfully")
     }
 
     private fun showErrorDialog(message: String) {
