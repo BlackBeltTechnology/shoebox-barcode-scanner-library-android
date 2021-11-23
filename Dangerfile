@@ -11,3 +11,4 @@ todoist.print_todos_table
 # ktlint
 checkstyle_format.base_path = Dir.pwd
 checkstyle_format.report "/bitrise/src/app/build/reports/ktlint.xml"
+checkstyle_format.report "/bitrise/src/barcodescanner/build/reports/ktlint.xml"
