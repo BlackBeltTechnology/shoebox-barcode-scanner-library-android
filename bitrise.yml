@@ -74,7 +74,8 @@ workflows:
             # write your script here
 
             # copy ktlint report
-            cp /bitrise/src/app/build/reports/ktlint.xml $BITRISE_DEPLOY_DIR/ktlint-report.xml
+            cp /bitrise/src/app/build/reports/ktlint.xml $BITRISE_DEPLOY_DIR/app-ktlint-report.xml
+            cp /bitrise/src/barcodescanner/build/reports/ktlint.xml $BITRISE_DEPLOY_DIR/barcodescanner-ktlint-report.xml
 
             exit 0
     - gradle-runner@2:
